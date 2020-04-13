@@ -2,7 +2,7 @@ Sourcetree with GitHub:
 
 https://www.youtube.com/watch?v=DYStzH7L6EQ
 
-Example of C++ .travis.yml file:
+Example of code for C++ .travis.yml file:
 
 sudo: required
 before_install:

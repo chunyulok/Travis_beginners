@@ -1,0 +1,8 @@
+Master branch:
+-created travis.yml with C++
+-able to build on travis push/pull request
+
+
+sides branches:
+- unable to build 
+

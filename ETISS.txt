@@ -51,4 +51,4 @@ The documentation is optionally built with ETISS and can be found in <etiss_inst
 It is also hosted at https://tum-ei-eda.github.io/etiss/
 
 
-Please complete reading by tomorrow.
+Please complete reading.

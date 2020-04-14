@@ -33,3 +33,4 @@ install:
 script:
   - mkdir build
   - cd build
+  - echo "Building all the things"	

@@ -1,20 +1,20 @@
-sudo required
-before_install
+sudo: required
+before_install:
   - sudo apt-get install libao-dev
   - sudo apt-get install libcurl4-openssl-dev
 
-branches
+branches:
   only 
   - master
   
 # Enable C++ support
-language C++
+language: C++
 
 # Compiler selection
-compiler
+compiler:
   - gcc
   
-install
+install:
   - DEPS_DIR=${TRAVIS_BUILD_DIR}deps
   - mkdir ${DEPS_DIR} && cd ${DEPS_DIR}
   
@@ -29,7 +29,7 @@ install
   - cd ..
 
 # Build steps
-script
+script:
   - mkdir build
   - cd build
   - echo Building all the things

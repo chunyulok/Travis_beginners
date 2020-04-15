@@ -1,40 +1,36 @@
-sudo: false
+sudo required
+before_install
+  - sudo apt-get install libao-dev
+  - sudo apt-get install libcurl4-openssl-dev
 
-dist: bionic
+branches
+  only 
+  - master
+  - build_this_branch
+  
+# Enable C++ support
+language C++
 
-language:
-    - c++
+# Compiler selection
+compiler
+  - gcc
+  
+install
+  - DEPS_DIR=${TRAVIS_BUILD_DIR}deps
+  - mkdir ${DEPS_DIR} && cd ${DEPS_DIR}
+  
+  - 
+    if [[ ${TRAVIS_OS_NAME} == linux ]]; then
+      CMAKE_URL=httpwww.cmake.orgfilesv3.3cmake-3.3.2-Linux-x86_64.tar.gz
+      mkdir cmake && travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL}  tar --strip-components=1 -xz -C cmake
+      export PATH=${DEPS_DIR}cmakebin${PATH}
+    fi
+  
+  # Go to the Root directory  
+  - cd ..
 
-# Blacklist
-branches:
-  only:
-    - master
-
-# Install dependencies
-addons:
-  apt:
-    packages:
-      - doxygen
-      - graphviz
-      - libboost-filesystem-dev
-
-install:
-  - mkdir -p ${TRAVIS_BUILD_DIR}/deps/cmake
-  - wget https://cmake.org/files/v3.16/cmake-3.16.2-Linux-x86_64.sh
-  - sh cmake-3.16.2-Linux-x86_64.sh --prefix=${TRAVIS_BUILD_DIR}/deps/cmake --exclude-subdir
-  - PATH=${TRAVIS_BUILD_DIR}/deps/cmake:${TRAVIS_BUILD_DIR}/deps/cmake/bin:$PATH
-
-# Build your code e.g. by calling make
-script:
-  - mkdir build && cd build
-  - cmake -DETISS_BUILD_MANUAL_DOC=ON ..
-  - make doc
-
-# Generate and deploy documentation
-deploy:
-  provider: pages
-  skip_cleanup: true
-  local_dir: build/doc/html
-  github_token: $GH_REPO_TOKEN
-  on:
-    branch: master
+# Build steps
+script
+  - mkdir build
+  - cd build
+  - echo Building all the things

@@ -19,7 +19,7 @@ install
   - mkdir ${DEPS_DIR} && cd ${DEPS_DIR}
   
   - 
-    if [[ ${TRAVIS_OS_NAME} == linux ]]; then
+    if [[ ${TRAVIS_OS_NAME} == window ]]; then
       CMAKE_URL=httpwww.cmake.orgfilesv3.3cmake-3.3.2-Linux-x86_64.tar.gz
       mkdir cmake && travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL}  tar --strip-components=1 -xz -C cmake
       export PATH=${DEPS_DIR}cmakebin${PATH}

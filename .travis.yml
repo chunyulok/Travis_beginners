@@ -6,7 +6,6 @@ before_install
 branches
   only 
   - master
-  - build_this_branch
   
 # Enable C++ support
 language C++

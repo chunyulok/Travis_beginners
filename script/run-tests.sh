@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 set -ev
 bundle exec rake:units
 if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then

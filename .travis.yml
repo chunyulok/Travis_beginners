@@ -8,7 +8,7 @@ before_install:
   - sudo apt-cache search libboost
 # - chmod +x installMPG123.sh
 # - ./installMPG123.sh
-  - chmod ugo+x scripts/run-tests.sh
+  - chmod ugo+x script/run-tests.sh
   
 # Enable C++ support
 language: 

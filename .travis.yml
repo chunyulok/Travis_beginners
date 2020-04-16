@@ -39,4 +39,4 @@ script:
   - cd build
 #  - ${DEPS_DIR}/cmake/bin/cmake .. && make
   - echo Building all the things
-  - ./scripts/run-tests.sh
+  - ./script/run-tests.sh

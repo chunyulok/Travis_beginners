@@ -1,7 +1,5 @@
 sudo: required
-
 dist: bionic
-
 before_install:
   - sudo apt-get install libao-dev
   - sudo apt-get install libcurl4-openssl-dev
@@ -13,7 +11,6 @@ before_install:
 # Enable C++ support
 language: 
   - C++
-
 # Compiler selection
 compiler:
   - gcc
@@ -21,7 +18,8 @@ compiler:
 install:
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
   - mkdir ${DEPS_DIR} && cd ${DEPS_DIR}
-  -  
+  
+  - |
     if [[ "${TRAVIS_OS_NAME}" == "windows" ]]; then
       #CMAKE_URL="http://www.cmake.org/files/v3.3/cmake-3.3.2-Linux-x86_64.tar.gz"
       $ pacman -S mingw64/mingw-w64-x86_64-cmake	
@@ -31,11 +29,11 @@ install:
   
   # Go to the Root directory  
   - cd ..
-
 # Build steps
 script:
   - mkdir build
   - cd build
-  - ${DEPS_DIR}/cmake/bin/cmake .. && make
+#  - ${DEPS_DIR}/cmake/bin/cmake .. && make
   - echo Building all the things
-# - script/run-tests.sh
+  - echo $Path
+  - script/run-tests.sh

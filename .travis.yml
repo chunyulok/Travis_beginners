@@ -21,7 +21,7 @@ compiler:
 install:
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
   - mkdir ${DEPS_DIR} && cd ${DEPS_DIR}
-  - PATH=DEPS_DIR:$path
+  - PATH=${DEPS_DIR}:$path
     if [[ "${TRAVIS_OS_NAME}" == "windows" ]]; then
       #CMAKE_URL="http://www.cmake.org/files/v3.3/cmake-3.3.2-Linux-x86_64.tar.gz"
       $ pacman -S mingw64/mingw-w64-x86_64-cmake	

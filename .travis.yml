@@ -36,7 +36,6 @@ install:
 script:
   - mkdir build
   - cd build
-# - ${DEPS_DIR}/cmake/bin/cmake .. && make
+  - ${DEPS_DIR}/cmake/bin/cmake .. && make
   - echo Building all the things
-  - echo $Path
-#  - script/run-tests.sh
+# - script/run-tests.sh

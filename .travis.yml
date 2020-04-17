@@ -36,5 +36,5 @@ script:
   - cd build
 #  - ${DEPS_DIR}/cmake/bin/cmake .. && make
   - echo Building all the things
-  - echo $Path
+  - echo $PATH
 #  - script/run-tests.sh

@@ -16,10 +16,16 @@ compiler:
   - gcc
   
 install:
+  - sudo wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
+  - sudo tar xzvf boost_1_64_0.tar.gz
+  - cd boost_1_64_0/
+  - sudo ./bootstrap.sh --prefix=/usr/local
+  - sudo ./b2
+  - sudo ./b2 install 
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
   - mkdir ${DEPS_DIR} && cd ${DEPS_DIR}
-  
-  - |
+  - 
+  - 
     if [[ "${TRAVIS_OS_NAME}" == "windows" ]]; then
       #CMAKE_URL="http://www.cmake.org/files/v3.3/cmake-3.3.2-Linux-x86_64.tar.gz"
       $ pacman -S mingw64/mingw-w64-x86_64-cmake	
@@ -36,4 +42,4 @@ script:
 # - ${DEPS_DIR}/cmake/bin/cmake .. && make
   - echo Building all the thingss
   - echo ${TRAVIS_BUILD_DIR}
-  - ./home/travis/build/chunyulok/Travis_beginners/script/run-tests.sh
+#  - ./home/travis/build/chunyulok/Travis_beginners/script/run-tests.sh

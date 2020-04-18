@@ -36,5 +36,5 @@ script:
   - cd build
 #  - ${DEPS_DIR}/cmake/bin/cmake .. && make
   - echo Building all the things
-  - echo $PATH
+  - echo ${TRAVIS_BUILD_DIR}
 #  - script/run-tests.sh

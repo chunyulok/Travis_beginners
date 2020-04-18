@@ -17,11 +17,6 @@ compiler:
   
 install:
   - sudo wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
-  - sudo tar xzvf boost_1_64_0.tar.gz
-  - cd boost_1_64_0/
-  - sudo ./bootstrap.sh --prefix=/usr/local
-  - sudo ./b2
-  - sudo ./b2 install 
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
   - mkdir ${DEPS_DIR} && cd ${DEPS_DIR}
   - 

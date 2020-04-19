@@ -1,12 +1,6 @@
 sudo: required
 dist: bionic
 
-addons:
-  apt:
-    packages:
-      - doxygen
-      - graphviz
-      - libboost-filesystem-dev
 
 before_install:
   - sudo apt-get install libao-dev

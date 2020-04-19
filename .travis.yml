@@ -16,14 +16,12 @@ addons:
       - doxygen
       - graphviz
       - libboost-filesystem-dev
-    cache:
-      - libboost
+      - boost1.67
+
 
 before_install:
-  - sudo apt-get install libao-dev #not needed for ETISS
-  - sudo apt-get install libcurl4-openssl-dev #not needed for ETISS
-#  - sudo apt-cache search libboost
-#  - sudo wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
+  - sudo apt-cache search libboost
+# - sudo wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
 #  - sudo tar xzvf boost_1_64_0.tar.gz
 # - chmod +x installMPG123.sh
 # - ./installMPG123.sh

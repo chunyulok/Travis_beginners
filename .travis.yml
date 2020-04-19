@@ -20,7 +20,6 @@ compiler:
 install:
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
   - mkdir ${DEPS_DIR} && cd ${DEPS_DIR}
-  - make get-deps
 
   - |
     if [[ "${TRAVIS_OS_NAME}" == "windows" ]]; then
@@ -41,5 +40,5 @@ script:
   - echo Building all the thingss
   - echo ${DEPS_DIR}
   - cd ${TRAVIS_BUILD_DIR} 
-  - ./script/run-tests.sh 
+  - "bash -c ./script/run-tests.sh" 
 #  - ./home/travis/build/chunyulok/Travis_beginners/script/run-tests.sh

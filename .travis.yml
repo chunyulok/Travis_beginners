@@ -1,25 +1,33 @@
 sudo: required
+
+# Enable C++ support
+language: 
+  - C++
+
+# Compiler selection
+compiler:
+  - gcc
+
 dist: bionic
 
+addons:
+  apt:
+    packages:
+      - doxygen
+      - graphviz
+      - libboost-filesystem-dev
+    cache:
+      - libboost
 
 before_install:
-  - sudo apt-get install libao-dev
-  - sudo apt-get install libcurl4-openssl-dev
-  - sudo apt-cache search libboost
+  - sudo apt-get install libao-dev #not needed for ETISS
+  - sudo apt-get install libcurl4-openssl-dev #not needed for ETISS
+#  - sudo apt-cache search libboost
 #  - sudo wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
 #  - sudo tar xzvf boost_1_64_0.tar.gz
 # - chmod +x installMPG123.sh
 # - ./installMPG123.sh
   - chmod ugo+x script/run-tests.sh
-  
-# Enable C++ support
-language: 
-  - C++
-# Compiler selection
-compiler:
-  - gcc
-
-
   
 install:
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
@@ -44,5 +52,5 @@ script:
   - echo Building all the thingss
   - echo ${DEPS_DIR}
   - cd ${TRAVIS_BUILD_DIR} 
-  - "bash -c ./script/run-tests.sh" 
+#  - "bash -c ./script/run-tests.sh" 
 #  - ./home/travis/build/chunyulok/Travis_beginners/script/run-tests.sh

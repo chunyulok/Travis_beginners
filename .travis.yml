@@ -40,5 +40,5 @@ script:
 # - ${DEPS_DIR}/cmake/bin/cmake .. && make
   - echo Building all the thingss
   - echo ${TRAVIS_BUILD_DIR} 
-#  - script/run-tests.sh 
+  - script/run-tests.sh 
 #  - ./home/travis/build/chunyulok/Travis_beginners/script/run-tests.sh

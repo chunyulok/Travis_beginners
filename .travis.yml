@@ -4,7 +4,9 @@ before_install:
   - sudo apt-get install libao-dev
   - sudo apt-get install libcurl4-openssl-dev
   - sudo apt-cache search libboost
-  -  sudo wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
+  - sudo wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
+  - sudo tar xzvf boost_1_64_0.tar.gz
+  - cd boost_1_64_0/
 # - chmod +x installMPG123.sh
 # - ./installMPG123.sh
   - chmod ugo+x script/run-tests.sh

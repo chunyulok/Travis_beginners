@@ -1,5 +1,13 @@
 sudo: required
 dist: bionic
+
+addons:
+  apt:
+    packages:
+      - doxygen
+      - graphviz
+      - libboost-filesystem-dev
+
 before_install:
   - sudo apt-get install libao-dev
   - sudo apt-get install libcurl4-openssl-dev
@@ -16,6 +24,8 @@ language:
 # Compiler selection
 compiler:
   - gcc
+
+
   
 install:
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"

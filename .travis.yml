@@ -4,8 +4,8 @@ before_install:
   - sudo apt-get install libao-dev
   - sudo apt-get install libcurl4-openssl-dev
   - sudo apt-cache search libboost
-  - sudo wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
-  - sudo tar xzvf boost_1_64_0.tar.gz
+#  - sudo wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
+#  - sudo tar xzvf boost_1_64_0.tar.gz
 # - chmod +x installMPG123.sh
 # - ./installMPG123.sh
   - chmod ugo+x script/run-tests.sh
@@ -35,9 +35,10 @@ install:
 script:
   - mkdir build
   - cd build
+  - cd ${TRAVIS_BUILD_DIR}
 #  - ${DEPS_DIR}/cmake/bin/cmake .. && make
 # - ${DEPS_DIR}/cmake/bin/cmake .. && make
   - echo Building all the thingss
-  - echo ${TRAVIS_BUILD_DIR}
+  - echo ${TRAVIS_BUILD_DIR} 
 #  - script/run-tests.sh 
 #  - ./home/travis/build/chunyulok/Travis_beginners/script/run-tests.sh

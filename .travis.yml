@@ -33,12 +33,12 @@ install:
   - cd ..
 # Build steps
 script:
-  - cd ${TRAVIS_BUILD_DIR}
   - mkdir build
   - cd build
 #  - ${DEPS_DIR}/cmake/bin/cmake .. && make
 # - ${DEPS_DIR}/cmake/bin/cmake .. && make
   - echo Building all the thingss
-  - echo ${TRAVIS_BUILD_DIR} 
+  - echo ${DEPS_DIR}
+  - cd ${TRAVIS_BUILD_DIR} 
   - ./script/run-tests.sh 
 #  - ./home/travis/build/chunyulok/Travis_beginners/script/run-tests.sh
